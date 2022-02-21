@@ -11,8 +11,16 @@ addToDoButton.addEventListener("click", function () {
 
   paragraph.addEventListener("click", function () {
     paragraph.style.textDecoration = "line-through";
+    paragraph.style.color = "#c5cbba";
   });
   paragraph.addEventListener("dblclick", function () {
     toDoContainer.removeChild(paragraph);
   });
+});
+
+inputField.addEventListener("keyup", function (event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    addToDoButton.click();
+  }
 });
